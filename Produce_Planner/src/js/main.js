@@ -64,3 +64,4 @@ document.getElementById("save").addEventListener("click", async (e) => {
   // Indicate list update with haptic feedback
   await Haptics.impact({ style: ImpactStyle.Medium });
 });
+

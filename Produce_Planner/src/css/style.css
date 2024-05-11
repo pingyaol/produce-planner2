@@ -3,10 +3,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* main colors 
+- light green: rgba(114,157,64,255)
+- dark green: rgba(67,94,55,255)
+- tan: rgba(255,245,227,255)
+- light orange: rgba(239,169,99,255)
+- dark orange: rgba(234,141,48,255)
+
+*/
+
 html,
 body {
+  /* position: fixed;  */
   padding: 0;
   margin: 0;
+  background-color: rgba(255,245,227,255);
+  font-family: "Nerko One", cursive;
+  height: 100%; 
+  padding-top: 100px;
+}
+
+.nerko-one-regular {
+  font-family: "Nerko One", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Fix for iOS area above our custom nav bar */
@@ -33,7 +53,7 @@ body {
 
 /* Wrap our app content so it'*s not covered by nav bar */
 .app-container {
-  margin-top: 60px;
+  margin-top: 100px; 
 }
 
 /* Style our main screeen */

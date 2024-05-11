@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Capacitor App</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <script type="module" src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+    <script nomodule src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#31d53d" />
+  </head>
+  <body>
+    <!-- Fix for iOS navbar gap -->
+    <div class="app-navbar-notch"></div>
+    <custom-navbar>
+      <img slot="logo" src="assets/imgs/logo.PNG">
+      <div slot="home">
+        <a href="/index.html"><img src="assets/imgs/home-btn.PNG"></a>
+      </div>
+      <div slot="cart">
+        <a href="/cart.html"><img src="assets/imgs/cart-btn.PNG"></a>
+      </div>
+      <div slot="recipe">
+        <a href="/recipe.html"><img src="assets/imgs/recipe-btn.PNG"></a>
+      </div>
+      <div slot="menu">
+        <a href="/info.html"><img src="assets/imgs/menu-btn.PNG"></a>
+      </div>
+      <div slot="user">
+        <img src="assets/imgs/user.PNG">
+      </div>
+    </custom-navbar>
+
+    <div class="app-container">
+      
+      <!-- The captured image -->
+      <img id="image" class="p-4" />
+
+      <!-- Box to upload an image -->
+      <div class="upload-box" id="upload-box">
+        <div class="font-medium text-blue-600" id="image-button">
+          <span>Capture image</span>
+        </div>
+      </div>
+
+      <label for="date">Pick a date</label>
+      <input type="date" name="date" id="date">
+
+      <p id="date-text"></p>
+      <!-- <ion-list>
+        <ion-item>
+        <ion-select placeholder="Select a Month">
+            <div slot="label">Favorite Fruit <ion-text color="danger">(Required)</ion-text></div>
+            <ion-select-option value="jan">January</ion-select-option>
+            <ion-select-option value="feb">February</ion-select-option>
+            <ion-select-option value="mar">March</ion-select-option>
+            <ion-select-option value="apr">April</ion-select-option>
+            <ion-select-option value="may">May</ion-select-option>
+            <ion-select-option value="jun">June</ion-select-option>
+            <ion-select-option value="jul">July</ion-select-option>
+            <ion-select-option value="aug">August</ion-select-option>
+            <ion-select-option value="sep">September</ion-select-option>
+            <ion-select-option value="oct">October</ion-select-option>
+            <ion-select-option value="nov">November</ion-select-option>
+            <ion-select-option value="dec">December</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list> -->
+
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="spring" value="spring" placeholder="Select spring produce">
+          <ion-select-option value="apricots">Apricots</ion-select-option>
+          <ion-select-option value="avocado">Avocado</ion-select-option>
+          <ion-select-option value="mango">Mango</ion-select-option>
+          <ion-select-option value="pineapple">Pineapple</ion-select-option>
+          <ion-select-option value="rhubarb">Rhubarb</ion-select-option>
+          <ion-select-option value="strawberries">Strawberries</ion-select-option>
+          <ion-select-option value="artichoke">Artichoke</ion-select-option>
+          <ion-select-option value="asparagus">Asparagus</ion-select-option>
+          <ion-select-option value="carrots">Carrots</ion-select-option>
+          <ion-select-option value="celeriac">Celeriac</ion-select-option>
+          <ion-select-option value="chives">Chives</ion-select-option>
+          <ion-select-option value="collards">Collards</ion-select-option>
+          <ion-select-option value="fava-beans">Fava Beans</ion-select-option>
+          <ion-select-option value="fennel">Fennel</ion-select-option>
+          <ion-select-option value="fiddlehead-ferns">Fiddlehead Ferns</ion-select-option>
+          <ion-select-option value="morels">Morels</ion-select-option>
+          <ion-select-option value="mustard-greens">Mustard Greens</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="summer" value="summer" placeholder="Select summer produce">
+          <ion-select-option value="blackberries">Blackberries</ion-select-option>
+          <ion-select-option value="blueberries">Blueberries</ion-select-option>
+          <ion-select-option value="nectarines">Nectarines</ion-select-option>
+          <ion-select-option value="peaches">Peaches</ion-select-option>
+          <ion-select-option value="plums">Plums</ion-select-option>
+          <ion-select-option value="raspberries">Raspberries</ion-select-option>
+          <ion-select-option value="tomatoes">Tomatoes</ion-select-option>
+          <ion-select-option value="watermelon">Watermelon</ion-select-option>
+          <ion-select-option value="broccoli">Broccoli</ion-select-option>
+          <ion-select-option value="cucumber">Cucumber</ion-select-option>
+          <ion-select-option value="green beans">Green Beans</ion-select-option>
+          <ion-select-option value="zucchini">Zucchini</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="fall" value="fall" placeholder="Select fall produce">
+          <ion-select-option value="apples">Apples</ion-select-option>
+          <ion-select-option value="cranberries">Cranberries</ion-select-option>
+          <ion-select-option value="figs">Figs</ion-select-option>
+          <ion-select-option value="grapes">Grapes</ion-select-option>
+          <ion-select-option value="pears">Pears</ion-select-option>
+          <ion-select-option value="pomegranate">Pomegranate</ion-select-option>
+          <ion-select-option value="quince">Quince</ion-select-option>
+          <ion-select-option value="butternut squash">Butternut Squash</ion-select-option>
+          <ion-select-option value="cauliflower">Cauliflower</ion-select-option>
+          <ion-select-option value="garlic">Garlic</ion-select-option>
+          <ion-select-option value="ginger">Ginger</ion-select-option>
+          <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+          <ion-select-option value="potatoes">Potatoes</ion-select-option>
+          <ion-select-option value="pumpkin">Pumpkin</ion-select-option>
+          <ion-select-option value="sweet potatoes">Sweet Potatoes</ion-select-option>
+          <ion-select-option value="swiss chard">Swiss Chard</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="winter" value="winter" placeholder="Select winter produce">
+          <ion-select-option value="chestnuts">Chestnuts</ion-select-option>
+          <ion-select-option value="grapefruit">Grapefruit</ion-select-option>
+          <ion-select-option value="lemons">Lemons</ion-select-option>
+          <ion-select-option value="oranges">Oranges</ion-select-option>
+          <ion-select-option value="tangerines">Tangerines</ion-select-option>
+          <ion-select-option value="kale">Kale</ion-select-option>
+          <ion-select-option value="leeks">Leeks</ion-select-option>
+          <ion-select-option value="radicchio">Radicchio</ion-select-option>
+          <ion-select-option value="radishes">Radishes</ion-select-option>
+          <ion-select-option value="rutabaga">Rutabaga</ion-select-option>
+          <ion-select-option value="turnips">Turnips</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+
+      <!--  Input fields -->
+      <div class="m-4">
+        <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+        <textarea id="description" name="description" rows="3" class="description-input" placeholder="Describe your image"></textarea>
+        <button class="button mt-4" id="save">Save Image</button>
+      </div>
+
+      <!-- Custom component with all stored photos -->
+      <my-photos></my-photos>
+    </div>
+
+    <script src="./js/photo-list.js" type="module"></script>
+    <script src="./js/navbar.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
+
+    <!-- Ionic Selectable -->
+    <!-- https://www.npmjs.com/package/@ionic-selectable/core -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic-selectable/core/dist/ionic-selectable/ionic-selectable.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic-selectable/core/dist/ionic-selectable/ionic-selectable.js"></script>
+
+    <script> 
+    
+    </script>
+  </body>
+</html>

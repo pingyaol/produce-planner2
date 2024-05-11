@@ -17,12 +17,24 @@
     <div class="app-navbar-notch"></div>
 
     <!-- The custom nav bar, using 2 of the slots -->
-    <custom-navbar
-      ><h1 slot="title">App information</h1>
-      <div slot="start">
-        <a href="/"><button>Back</button></a>
-      </div></custom-navbar
-    >
+    <custom-navbar>
+      <img slot="logo" src="assets/imgs/logo.PNG">
+      <div slot="home">
+        <a href="/index.html"><img src="assets/imgs/home-btn.PNG"></a>
+      </div>
+      <div slot="cart">
+        <a href="/cart.html"><img src="assets/imgs/cart-btn.PNG"></a>
+      </div>
+      <div slot="recipe">
+        <a href="/recipe.html"><img src="assets/imgs/recipe-btn.PNG"></a>
+      </div>
+      <div slot="menu">
+        <a href="/info.html"><img src="assets/imgs/menu-btn.PNG"></a>
+      </div>
+      <div slot="user">
+        <img src="assets/imgs/user.PNG">
+      </div>
+    </custom-navbar>
 
     <div class="app-container">
       <div class="m-4">This is my first native app built with <a href="https://capacitorjs.com/" class="text-blue-600">Capacitor</a></div>

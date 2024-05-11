@@ -19,8 +19,6 @@
   <body>
     <!-- Fix for iOS navbar gap -->
     <div class="app-navbar-notch"></div>
-
-    <!-- The custom nav bar, using 2 of the slots -->
     <custom-navbar>
       <img slot="logo" src="assets/imgs/logo.PNG">
       <div slot="home">
@@ -40,6 +38,7 @@
       </div>
     </custom-navbar>
 
+
     <script>
       window.Ionic = {
         config: {
@@ -58,6 +57,12 @@
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic-selectable/core/dist/ionic-selectable/ionic-selectable.js"></script>
 
     <script> 
+    
+      // Get month input 
+      var field = document.querySelector('input[type="date"]');
+      document.getElementById("#date-text").innerText = "hi"; 
+      console.log(field.value); 
+
     </script>
   </body>
 </html>
